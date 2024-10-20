@@ -10,4 +10,6 @@ export const colors = {
     sale: "#b8b8b8",
     line: "#dedddd",
     circle: "#f1f1f1",
+    placeholder: "#ababab",
+    grey: "#F9F8F8"
 }

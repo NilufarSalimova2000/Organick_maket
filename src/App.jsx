@@ -6,8 +6,9 @@ import { About } from "./pages/about";
 import { Shop } from "./pages/shop";
 import { Projects } from "./pages/projects";
 import { News } from "./pages/news";
-import { TextField } from "@mui/material";
+import { Typography } from "@mui/material";
 import { ProductDeatil } from "./components/product-detail";
+import { NotFound } from "./components/not-found";
 
 
 function App() {
@@ -19,11 +20,12 @@ function App() {
           <Route index element={<Home />} />
           <Route path="product/:id" element={<ProductDeatil />} />
           <Route path="about" element={<About />} />
-          <Route path="pages" element={<TextField>Pages</TextField>} />
+          <Route path="pages" element={<Typography>Pages</Typography>} />
           <Route path="shop" element={<Shop />} />
           <Route path="projects" element={<Projects />} />
           <Route path="news" element={<News />} />
         </Route>
+        <Route path="*" element={<NotFound/>} />
       </Routes>
     </>
   )

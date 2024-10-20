@@ -5,9 +5,14 @@ import { theme } from "../../../config/mui-config";
 export const CardWrapper = styled.div`
     border-radius: 30px;
     border: 2px solid ${colors.cardBg};
-    width: 325px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    width: 335px;
     padding: 30px 30px 17px 30px;
     background-color: ${colors.white};
+    transition: all 0.4s ease;
+    &:hover {
+        transform: scale(1.05);
+    }
 `
 export const TypeBox = styled.div`
     border-radius: 8px;

@@ -89,8 +89,8 @@ export const theme = createTheme({
         values: {
             xs: 0,
             sm: 320,
-            md: 900,
-            lg: 1400,
+            md: 1200,
+            lg: 1448,
             xl: 1648,
         }
     }

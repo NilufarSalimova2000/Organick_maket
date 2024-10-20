@@ -1,9 +1,9 @@
 import React from "react";
 import { Banner } from "../../components/banner";
 import { Box, Container, Rating, Stack, Typography } from "@mui/material";
-import { data, products, statistics } from "../../data/data";
+import { data, products, statistics, organic, news } from "../../data/data";
 import { InfoCard } from "../../components/card/info-card";
-import AboutBg from "../../assets/img/about_bg.png";
+import AboutBg from "../../assets/img/about_img.png";
 import TestimonialBg from "../../assets/img/testimonial_bg.png";
 import TestimonialImag from "../../assets/img/testimonial_img.png";
 import EcoBg from "../../assets/img/eco_bg.png";
@@ -15,8 +15,11 @@ import { Link } from "react-router-dom";
 import { Line } from "../../components/card/product-card/style";
 import { StatisticCard } from "../../components/card/statistic-card";
 import { theme } from "../../config/mui-config";
-import { colors } from "../../config/colors";
 import { PrimaryButton } from "../../components/primary-button";
+import { ThirdyButton } from "../../components/thirdy-button";
+import { OrganicCard } from "../../components/card/organic-card";
+import { NewsCard } from "../../components/card/news-card";
+import { colors } from "../../config/colors";
 
 export const Home = () => {
     return (
@@ -33,35 +36,37 @@ export const Home = () => {
                 </Container>
             </Box>
 
-            <Box pt={"186px"} pb={"199px"} sx={{
-                backgroundImage: `url(${AboutBg})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover"
-            }}>
-                <Container maxWidth={"lg"}>
-                    <Stack justifyContent="end" alignItems="flex-end">
-                        <Box maxWidth={"702px"}>
-                            <Typography mb={"8px"} variant="h4">About Us</Typography>
-                            <Typography mb={"14px"} variant="h2">We Believe in Working Accredited Farmers</Typography>
-                            <Typography mb={"46px"} variant="body1">Simply dummy text of the printing and typesetting industry. Lorem had ceased to been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</Typography>
-                            <Stack mb={"30px"} direction={"row"} gap={"19px"}>
-                                <AboutIcon1 />
-                                <Box maxWidth={"444px"}>
-                                    <Typography mb={"7px"} fontSize={"25px"} variant="h3">Organic Foods Only</Typography>
-                                    <Typography variant="body1">Simply dummy text of the printing and typesetting industry. Lorem Ipsum</Typography>
-                                </Box>
-                            </Stack>
-                            <Stack mb={"46px"} direction={"row"} gap={"19px"}>
-                                <AboutIcon2 />
-                                <Box maxWidth={"444px"}>
-                                    <Typography mb={"7px"} fontSize={"25px"} variant="h3">Quality Standards</Typography>
-                                    <Typography variant="body1">Simply dummy text of the printing and typesetting industry. Lorem Ipsum</Typography>
-                                </Box>
-                            </Stack>
-                            <SecondaryButton>Shop Now</SecondaryButton>
+            <Box py={"100px"} bgcolor={`${colors.grey}`}>
+                <Container maxWidth={"xl"}>
+                    <Stack direction="row" alignItems={"center"}>
+                        <Box>
+                            <img src={AboutBg} alt="imag" />
                         </Box>
+                        <Stack justifyContent="end" alignItems="flex-end">
+                            <Box maxWidth={"702px"}>
+                                <Typography mb={"8px"} variant="h4">About Us</Typography>
+                                <Typography mb={"14px"} variant="h2">We Believe in Working Accredited Farmers</Typography>
+                                <Typography mb={"46px"} variant="body1">Simply dummy text of the printing and typesetting industry. Lorem had ceased to been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</Typography>
+                                <Stack mb={"30px"} direction={"row"} gap={"19px"}>
+                                    <AboutIcon1 />
+                                    <Box maxWidth={"444px"}>
+                                        <Typography mb={"7px"} fontSize={"25px"} variant="h3">Organic Foods Only</Typography>
+                                        <Typography variant="body1">Simply dummy text of the printing and typesetting industry. Lorem Ipsum</Typography>
+                                    </Box>
+                                </Stack>
+                                <Stack mb={"46px"} direction={"row"} gap={"19px"}>
+                                    <AboutIcon2 />
+                                    <Box maxWidth={"444px"}>
+                                        <Typography mb={"7px"} fontSize={"25px"} variant="h3">Quality Standards</Typography>
+                                        <Typography variant="body1">Simply dummy text of the printing and typesetting industry. Lorem Ipsum</Typography>
+                                    </Box>
+                                </Stack>
+                                <SecondaryButton>Shop Now</SecondaryButton>
+                            </Box>
 
+                        </Stack>
                     </Stack>
+
                 </Container>
             </Box>
 
@@ -110,7 +115,7 @@ export const Home = () => {
 
             <Box py={"200px"} bgcolor={`${theme.palette.primary.main}`}>
                 <Container maxWidth={"lg"}>
-                    <Stack direction={"row"} justifyContent={"space-between"} alignItems={"end"} mb={"50px"}>
+                    <Stack direction={"row"} justifyContent={"space-between"} alignItems={"flex-end"} mb={"50px"}>
                         <Box>
                             <Typography mb={"8px"} variant="h4">Offer</Typography>
                             <Typography color="#fff" variant="h2">We Offer Organic For You</Typography>
@@ -130,11 +135,50 @@ export const Home = () => {
             <Box py={"100px"} sx={{
                 backgroundImage: `url(${EcoBg})`,
                 backgroundRepeat: "no-repeat",
-                // backgroundSize: "cover",
-                width: "952px"
+                backgroundSize: "contain",
+                // width: "952px"
             }}>
                 <Container maxWidth={"lg"}>
-                    
+                    <Stack justifyContent="end" alignItems="flex-end">
+                        <Box bgcolor={"white"} py={"78px"} pl={"89px"} borderRadius={"30px"} maxWidth={"789px"}>
+                            <Typography mb={"8px"} variant="h4">Eco Friendly</Typography>
+                            <Typography mb={"35px"} variant="h2">Econis is a Friendly Organic Store</Typography>
+                            <Typography mb={"7px"} fontSize={"25px"} fontWeight={"500"} variant="h6">Start with Our Company First</Typography>
+                            <Typography mb={"35px"} variant="body1">Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque laudantium. Sed ut perspiciatis.</Typography>
+                            <Typography mb={"7px"} fontSize={"25px"} fontWeight={"500"} variant="h6">Learn How to Grow Yourself</Typography>
+                            <Typography mb={"35px"} variant="body1">Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque laudantium. Sed ut perspiciatis.</Typography>
+                            <Typography mb={"7px"} fontSize={"25px"} fontWeight={"500"} variant="h6">Farming Strategies of Today</Typography>
+                            <Typography variant="body1">Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque laudantium. Sed ut perspiciatis.</Typography>
+                        </Box>
+                    </Stack>
+
+                </Container>
+            </Box>
+
+            <Box py={"187px"} bgcolor={`${theme.palette.secondary[50]}`}>
+                {/* <Container maxWidth={"lg"}></Container> */}
+                <Stack direction={"row"} justifyContent={"space-between"}>
+                    {organic?.map((item) => {
+                        return <OrganicCard key={item.id} title={item.title} bgImag={item.bgImag} />
+                    })}
+
+                </Stack>
+            </Box>
+
+            <Box py={"180px"}>
+                <Container maxWidth={"lg"}>
+                    <Stack mb={"48px"} direction={"row"} justifyContent={"space-between"} alignItems={"flex-end"}>
+                        <Box maxWidth={"840px"}>
+                            <Typography mb={"8px"} variant="h4">News</Typography>
+                            <Typography variant="h2">Discover weekly content about organic food, & more</Typography>
+                        </Box>
+                        <ThirdyButton>More News</ThirdyButton>
+                    </Stack>
+                    <Stack direction={"row"} gap={"46px"}>
+                        {news?.map((item) => {
+                            return <NewsCard key={item.id} imag={item.imag} date={item.date} who={item.who} title={item.title} text={item.text} button={item.button} />
+                        })}
+                    </Stack>
                 </Container>
             </Box>
         </>
