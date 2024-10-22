@@ -9,6 +9,7 @@ import { News } from "./pages/news";
 import { Typography } from "@mui/material";
 import { ProductDeatil } from "./components/product-detail";
 import { NotFound } from "./components/not-found";
+import { Page } from "./pages/page";
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="product/:id" element={<ProductDeatil />} />
           <Route path="about" element={<About />} />
-          <Route path="pages" element={<Typography>Pages</Typography>} />
+          <Route path="pages" element={<Page />} />
           <Route path="shop" element={<Shop />} />
           <Route path="projects" element={<Projects />} />
           <Route path="news" element={<News />} />

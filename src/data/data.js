@@ -32,6 +32,9 @@ import OfferImag1 from "../assets/img/offer_img1.png";
 import OfferImag2 from "../assets/img/offer_img2.png";
 import OfferImag3 from "../assets/img/offer_img3.png";
 import OfferImag4 from "../assets/img/offer_img4.png";
+import PageBanner1 from "../assets/img/about_page_bg.png";
+import PageBanner2 from "../assets/img/shop_page_banner.png";
+import PageBanner3 from "../assets/img/product_detail-banner.png";
 
 export const data = [
     {
@@ -325,5 +328,38 @@ export const offer = [
         id: 4,
         img: OfferImag4,
         title: "Vegetable"
+    },
+]
+
+export const pageHero = [
+    {
+        id: 1,
+        title: "About Us",
+        bgImag: PageBanner1,
+    },
+    {
+        id: 2,
+        title: "Shop",
+        bgImag: PageBanner2,
+    },
+    {
+        id: 3,
+        title: "Shop Single",
+        bgImag: PageBanner3,
+    },
+    {
+        id: 4,
+        title: "News",
+        bgImag: PageBanner1,
+    },
+    {
+        id: 5,
+        title: "Projects",
+        bgImag: PageBanner2,
+    },
+    {
+        id: 6,
+        title: "Pages",
+        bgImag: PageBanner3,
     },
 ]

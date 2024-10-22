@@ -1,5 +1,4 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
-import Banner from "../../assets/img/about_page_bg.png"
 import AboutUsImag from "../../assets/img/about_page_hero.png";
 import { TractorIcon } from "../../assets/icons/tractor-icon";
 import { CircleIcon } from "../../assets/icons/circle-icon";
@@ -7,22 +6,19 @@ import ChooseImag from "../../assets/img/choose_img.png";
 import React from "react";
 import { SecondaryButton } from "../../components/secondary-button";
 import { colors } from "../../config/colors";
-import { services, experts, offer } from "../../data/data";
+import { services, experts, offer, pageHero } from "../../data/data";
 import { ServiceCard } from "../../components/card/service-card";
 import { ExpertCard } from "../../components/card/expert-card";
 import { OfferCard } from "../../components/card/offer-card";
+import { PageBanner } from "../../components/page-banner";
 
 export const About = () => {
     return (
         <>
-            <Box sx={{
-                backgroundImage: `url(${Banner})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover"
-            }} py={"200px"}>
-                <Container maxWidth={"lg"}>
-                    <Typography textAlign={"center"} variant="h2">About Us</Typography>
-                </Container>
+            <Box>
+                {pageHero?.slice(0, 1).map((item) => {
+                    return <PageBanner key={item.id} bgImag={item.bgImag} title={item.title}/>
+                })}
             </Box>
 
             <Box pt={"140px"} pb={"103px"}>

@@ -132,32 +132,34 @@ export const Home = () => {
                 </Container>
             </Box>
 
-            <Box py={"100px"} sx={{
-                backgroundImage: `url(${EcoBg})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "contain",
-                // width: "952px"
-            }}>
-                <Container maxWidth={"lg"}>
-                    <Stack justifyContent="end" alignItems="flex-end">
-                        <Box bgcolor={"white"} py={"78px"} pl={"89px"} borderRadius={"30px"} maxWidth={"789px"}>
-                            <Typography mb={"8px"} variant="h4">Eco Friendly</Typography>
-                            <Typography mb={"35px"} variant="h2">Econis is a Friendly Organic Store</Typography>
-                            <Typography mb={"7px"} fontSize={"25px"} fontWeight={"500"} variant="h6">Start with Our Company First</Typography>
-                            <Typography mb={"35px"} variant="body1">Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque laudantium. Sed ut perspiciatis.</Typography>
-                            <Typography mb={"7px"} fontSize={"25px"} fontWeight={"500"} variant="h6">Learn How to Grow Yourself</Typography>
-                            <Typography mb={"35px"} variant="body1">Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque laudantium. Sed ut perspiciatis.</Typography>
-                            <Typography mb={"7px"} fontSize={"25px"} fontWeight={"500"} variant="h6">Farming Strategies of Today</Typography>
-                            <Typography variant="body1">Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque laudantium. Sed ut perspiciatis.</Typography>
-                        </Box>
-                    </Stack>
+            <Stack direction={"row"} justifyContent={"center"} alignItems={"center"}>
+                <Box >
+                    <img src={EcoBg} alt="imag" />
+                </Box>
 
-                </Container>
-            </Box>
+                <Stack sx={{
+                    position: "relative", 
+                    left: "-50px",
+                }}>
+                    <Box bgcolor={"white"} py={"78px"} pl={"89px"} borderRadius={"30px"} maxWidth={"789px"}>
+                        <Typography mb={"8px"} variant="h4">Eco Friendly</Typography>
+                        <Typography mb={"35px"} variant="h2">Econis is a Friendly Organic Store</Typography>
+                        <Typography mb={"7px"} fontSize={"25px"} fontWeight={"500"} variant="h6">Start with Our Company First</Typography>
+                        <Typography mb={"35px"} variant="body1">Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque laudantium. Sed ut perspiciatis.</Typography>
+                        <Typography mb={"7px"} fontSize={"25px"} fontWeight={"500"} variant="h6">Learn How to Grow Yourself</Typography>
+                        <Typography mb={"35px"} variant="body1">Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque laudantium. Sed ut perspiciatis.</Typography>
+                        <Typography mb={"7px"} fontSize={"25px"} fontWeight={"500"} variant="h6">Farming Strategies of Today</Typography>
+                        <Typography variant="body1">Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque laudantium. Sed ut perspiciatis.</Typography>
+                    </Box>
+                </Stack>
+
+
+            </Stack>
+
 
             <Box py={"187px"} bgcolor={`${theme.palette.secondary[50]}`}>
                 {/* <Container maxWidth={"lg"}></Container> */}
-                <Stack direction={"row"} justifyContent={"space-between"}>
+                <Stack direction={"row"} gap={"42px"} justifyContent={"center"}>
                     {organic?.map((item) => {
                         return <OrganicCard key={item.id} title={item.title} bgImag={item.bgImag} />
                     })}

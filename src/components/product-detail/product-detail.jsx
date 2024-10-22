@@ -1,9 +1,8 @@
 import React from "react";
-import { products } from "../../data/data";
+import { products, pageHero } from "../../data/data";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { Box, Button, Container, Rating, Stack, Typography } from "@mui/material";
-import Banner from "../../assets/img/product-detail-banner.jpg"
 import { Sale, TypeBox } from "../card/product-card/style";
 import { SecondaryButton } from "../secondary-button";
 import styled from "@emotion/styled";
@@ -12,11 +11,12 @@ import { colors } from "../../config/colors";
 import { ProductCard } from "../card/product-card";
 import { Link } from "react-router-dom";
 import { NotFound } from "../not-found";
+import { PageBanner } from "../page-banner";
 
 export const ProductDeatil = () => {
     const { id } = useParams();
     useEffect(() => {
-        window.scrollTo(0, 0);
+        window.scrollTo(100, 700);
     }, [id]);
 
     const product = products.find((item) => item.id == parseInt(id));
@@ -37,14 +37,10 @@ export const ProductDeatil = () => {
 
     return (
         <>
-            <Box sx={{
-                backgroundImage: `url(${Banner})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover"
-            }} py={"200px"}>
-                <Container maxWidth={"lg"}>
-                    <Typography textAlign={"center"} variant="h2">Shop Single</Typography>
-                </Container>
+            <Box>
+                {pageHero?.slice(2, 3).map((item) => {
+                    return <PageBanner key={item.id} bgImag={item.bgImag} title={item.title}/>
+                })}
             </Box>
 
             <Box my={"135px"}>
